@@ -8,6 +8,12 @@ pipeline {
             steps{
 		    sh "docker build . -t dubeyn802/nodeapp:${DOCKER_TAG}"
 	    }
+		stage('Dockerhub push'){
+			withCredentials([string(credentialsId: 'docker hub', variable: 'dockerHubPwd')]) {
+				sh "dockerlogin -u  NeerajDubey333 -p ${dockerHubPwd}"
+                   }
+			
+		}
             }
         }
 }   
