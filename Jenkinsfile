@@ -9,7 +9,7 @@ pipeline {
 		    sh "docker build . -t dubeyn802/nodeapp:${DOCKER_TAG}"
 	    }
 		}
-            }
+            
         }
 }   
                 
