@@ -11,11 +11,12 @@ pipeline {
 		}//stage 1 ennd
 	    			
 	    stage('Push Docker Image'){
+		    steps{
                withCredentials([string(credentialsId: 'docker hub', variable: 'dockerHubPwd')]) {
 		       sh "docker login -u NeerajDubey333 -p ${dockerHubPwd}"
 		       sh "docker push NeerajDubey333/nodeapp${DOCKER_TAG}"
                 }
-	    
+		    }
 	    }
             
         }
