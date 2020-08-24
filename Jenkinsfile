@@ -24,6 +24,16 @@ pipeline {
 		    steps{  
 			    sh "chmod +x changeTag.sh"
 			    sh "./changeTag.sh ${DOCKER_TAG}"
+			    sh "-o stricthostkeychecking=no service.yml nod-app-pod.yml ssh ec2-user@3.89.65.153/home"
+			    script{
+				    try{
+					    sh "ssh ec2-user@3.89.65.153 kubctl apply -f."
+				    }catch(error){
+					    sh "ssh ec2-user@3.89.65.153 kubctl create -f."
+				    
+				    
+				    }
+			    } 
 		    
 		    
 		    }
