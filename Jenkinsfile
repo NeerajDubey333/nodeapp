@@ -24,7 +24,7 @@ pipeline {
 		    steps{  
 			    sh "chmod +x changeTag.sh"
 			    sh "./changeTag.sh ${DOCKER_TAG}"
-			    sh "scp -o stricthostkeychecking=no services.yml nod-app-pod.yml ec2-user@3.89.65.153:/home/"
+			    sh "scp -o stricthostkeychecking=no services.yml nod-app-pods.yml ec2-user@3.89.65.153:/home"
 			    script{
 				    try{
 					    sh "ssh ec2-user@3.89.65.153 kubctl apply -f."
