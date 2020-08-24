@@ -31,12 +31,8 @@ pipeline {
 				    }catch(error){
 					    sh "ssh ec2-user@3.89.65.153 kubctl create -f."
 				    
-				    
 				    }
 			    } 
-		    
-		    
-		    }
 	    
 	    }
             
