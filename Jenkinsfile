@@ -6,9 +6,9 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{   
-		    sh "cd"
-		    sh "ls -a"
-		    sh "cat tr.txt"
+		    sh "cd /home/ec2-user"
+		    sh "ls -l"
+		    sh "cat Dockerfile"
 		    sh "docker build . -t dubeyn802/nodeapp:${DOCKER_TAG}"
 		    
 	    }
