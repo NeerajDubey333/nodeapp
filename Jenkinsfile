@@ -27,12 +27,12 @@ pipeline {
 		    steps{  
 			    sh "chmod +x changeTag.sh"
 			    sh "./changeTag.sh ${DOCKER_TAG}"
-			   sh "scp -o stricthostkeychecking=no services.yml node-app-pod.yml ec2-user@3.89.65.153:/home/ec2-user"
+			   sh "scp -o stricthostkeychecking=no services.yml node-app-pod.yml ec2-user@54.85.112.214:/home/ec2-user"
 			    script{
 				    try{
-					    sh "ssh ec2-user@3.89.65.153 kubectl apply -f."
+					    sh "ssh ec2-user@54.85.112.214 kubectl apply -f."
 				    }catch(error){
-					    sh "ssh ec2-user@3.89.65.153 kubectl create -f."
+					    sh "ssh ec2-user@54.85.112.214 kubectl create -f."
 				    
 				    }
 			    } 
