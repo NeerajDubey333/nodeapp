@@ -7,8 +7,8 @@ docker login -u kammana -p yourpassword
 
 docker push $docker_app
 
-scp -i /var/lib/jenkins/dev.pem deploy.sh ec2-user@172.31.43.90:/tmp
+scp -i /var/lib/jenkins/dev.pem deploy.sh ec2-user@18.209.102.167:/tmp
 
-ssh -i /var/lib/jenkins/dev.pem ec2-user@172.31.43.90 chmod +x /tmp/deploy.sh
+ssh -i /var/lib/jenkins/dev.pem ec2-user@54.85.112.214 chmod +x /tmp/deploy.sh
 
-ssh -i /var/lib/jenkins/dev.pem ec2-user@172.31.43.90 /tmp/deploy.sh $docker_app
+ssh -i /var/lib/jenkins/dev.pem ec2-user@54.85.112.214 /tmp/deploy.sh $docker_app
